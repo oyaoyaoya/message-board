@@ -12,6 +12,9 @@
       <% end %>
     </div>
 </div>
+
+<%= render 'form'%>
+
 <div class="form-horizontal" role="form">
     <%= form_for(@message) do |f| %>
       <% if @message.errors.present? %>
