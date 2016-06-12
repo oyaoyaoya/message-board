@@ -14,14 +14,29 @@
 </div>
 <div class="form-horizontal" role="form">
     <%= form_for(@message) do |f| %>
-    <div class="form-group">
-        名前: <%= f.text_area :name, :rows => "1"%>
-    </div>
-     <div class="form-group">
-          内容:<%= f.text_area :body, :rows => "1" %>
-     </div>
-    <div class="col-sm-7">
-          <%= f.submit class: "btn btn-sm btn-primary", :class =>"form-control" %>
-    </div> 
+      <% if @message.errors.present? %>
+       <div class="alert alert-danger">
+           <%= alert%>
+           <ul>
+               <% @message.errors.full_messages.each do |full_message|%>
+               <li>
+                   <%= full_message%>
+               </li>
+              <% end %>
+           </ul>
+       </div>
+      <% end %>
+      
+      
+      
+        <div class="form-group">
+            名前: <%= f.text_area :name, :rows => "1"%>
+        </div>
+         <div class="form-group">
+              内容:<%= f.text_area :body, :rows => "1" %>
+         </div>
+        <div class="col-sm-7">
+              <%= f.submit class: "btn btn-sm btn-primary", :class =>"form-control" %>
+        </div> 
     <% end %>
 </div>
