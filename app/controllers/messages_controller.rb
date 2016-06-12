@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   def index
     @message = Message.new
-    #Messageをすべて取得する
     @messages = Message.all
   end
   
