@@ -3,21 +3,25 @@
     メッセージ一覧            
     </div>
     <div class="panel-body">
-        <%= @messages.each do |message| %>
-    <span class="label label-info"><%= message.name %></span>
+        <% @messages.each do |message| %>
+    <span class="label label-info">
+        <%= message.name %>
+    </span>
       <%= message.body %>
     　<br>
       <% end %>
     </div>
 </div>
-
-<%= form_for(@message) do |f| %>
-  名前:
- <%= f.text_area :name, :rows => "1"%>
-
-  内容:
-
-  <%= f.text_area :body, :rows => "1" %>
-
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
+<div class="form-horizontal" role="form">
+    <%= form_for(@message) do |f| %>
+    <div class="form-group">
+        名前: <%= f.text_area :name, :rows => "1"%>
+    </div>
+     <div class="form-group">
+          内容:<%= f.text_area :body, :rows => "1" %>
+     </div>
+    <div class="col-sm-7">
+          <%= f.submit class: "btn btn-sm btn-primary", :class =>"form-control" %>
+    </div> 
+    <% end %>
+</div>
