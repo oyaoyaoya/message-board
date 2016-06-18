@@ -5,10 +5,5 @@ class Message < ActiveRecord::Base
     validates :body , length: { minimum: 2, maximum: 30 } , presence: true
 end
 
-# {
-#   html: {
-#     class: 'form-horizontal'  
-#   }
-# }
 
-# hash = {key: {key: 'value'}}
+
