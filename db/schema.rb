@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160615000341) do
     t.string   "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "age"
+    t.string  "age"
   end
 
 end
