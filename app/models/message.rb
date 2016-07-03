@@ -4,7 +4,7 @@ class Message < ActiveRecord::Base
     #内容は必須入力かつ2文字以上30文字以下
     validates :body , length: { minimum: 2, maximum: 100} , presence: true
     #年齢は0以上
-    validates :age, format: /\A#{URI::regexp(%w(http https))}\z/
+    validates :url, format: /\A#{URI::regexp(%w(http https))}\z/
 end
 
 
